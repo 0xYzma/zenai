@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: zenai-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: ZENAI_DATABASE_URL
+        sync: false
+      - key: TARGET_DATABASE_URL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ZENAI_ENCRYPTION_KEY
+        generateValue: true
+      - key: ZENAI_MODE
+        value: "standalone"
+      - key: ENABLE_CURATED_TOOLS
+        value: "false"
+      - key: ENABLE_TEXT_TO_SQL
+        value: "false"
+      - key: PYTHON_VERSION
+        value: "3.12"

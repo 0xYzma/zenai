@@ -1,0 +1,69 @@
+# Dependencies
+node_modules/
+backend/venv/
+.venv/
+venv/
+env/
+ENV/
+
+# Next.js & Frontend builds
+frontend/.next/
+frontend/out/
+frontend/build/
+dist/
+build/
+*.tsbuildinfo
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local databases, vector stores, and data
+backend/chroma_data/
+*.sqlite
+*.sqlite3
+*.db
+
+# Environment variables & secrets (CRITICAL for public repos)
+.env
+.env.*
+*.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+!.env.example
+!.env.template
+!backend/.env.example
+!frontend/.env.example
+
+# Log files (only match log files or root logs directory, not source code directories named logs)
+/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Vercel & Render local metadata
+.vercel/
+
+# Certificates & keys
+*.pem
+*.key
+*.cert
+*.pfx
+*.p12
