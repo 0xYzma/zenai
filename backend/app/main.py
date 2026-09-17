@@ -145,12 +145,12 @@ app.include_router(workspaces.router, prefix="/workspaces", tags=["workspaces"])
 app.include_router(chat.router, prefix="/workspaces", tags=["chat"])
 
 
-@app.get("/health/live")
+@app.api_route("/health/live", methods=["GET", "HEAD"])
 async def health_live():
     return {"status": "ok", "version": "1.0.0", "mode": settings.zenai_mode}
 
 
-@app.get("/health")
+@app.api_route("/health", methods=["GET", "HEAD"])
 async def health_check():
     """Backward-compatible public liveness endpoint."""
     return await health_live()
